@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 class ListContacts extends Component {
 
@@ -35,6 +36,12 @@ class ListContacts extends Component {
             <div className='list-contacts'>
                 <div className='list-contacts-top'>
                     <input type="text" className='search-contacts' placeholder='Search contacts' value={query} onChange={(event) => this.updateQuery(event.target.value)}></input>
+                    <Link
+                        to='/create'
+                        className="add-contact"
+                    >
+                        Add Contact
+                    </Link>
                 </div>
                 {
                     showedContacts.length !== contacts.length && (
